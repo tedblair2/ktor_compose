@@ -5,5 +5,5 @@ import com.example.ktor_compose.model.Quote
 import kotlinx.coroutines.flow.Flow
 
 interface ApiService {
-    suspend fun getQuotes(category:String="humor",limit:Int=5):Flow<ApiResult<List<Quote>>>
+    fun getQuotes(category:String="humor",limit:Int=5):Flow<ApiResult<List<Quote>>>
 }
