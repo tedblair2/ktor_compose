@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class ApiServiceImpl @Inject constructor(private val httpClient: HttpClient) : ApiService {
-    override suspend fun getQuotes(category: String, limit: Int): Flow<ApiResult<List<Quote>>> = flow{
+    override fun getQuotes(category: String, limit: Int): Flow<ApiResult<List<Quote>>> = flow{
         emit(ApiResult.Loading())
         try {
             emit(ApiResult.Success(httpClient.get("/v1/quotes"){
